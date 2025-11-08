@@ -12,19 +12,19 @@ Growspent automatically rounds up or adds a small % from each transaction and in
 Most people *want* to invest, but few actually start.  
 Budgeting feels restrictive, and investing feels complicated. Growspent fixes that by connecting to your existing spending habits and redirecting tiny amounts — round-ups or percentage add-ons — into growth automatically.
 
-- **AI-Smart Investing:** adapts to your balance and spending pattern.
-- **Multi-Bucket System:** emergency savings, debt paydown, and long-term investing.
-- **Cash-Flow Aware:** pauses when money is tight, boosts when you can afford it.
-- **Guilt-Free Experience:** no “you should save more” nags — just progress.
+- **AI-Smart Investing:** adapts to your balance and spending pattern  
+- **Multi-Bucket System:** emergency savings, debt paydown, and long-term investing  
+- **Cash-Flow Aware:** pauses when money is tight, boosts when you can afford it  
+- **Guilt-Free Experience:** no “you should save more” nags — just progress  
 
 ---
 
 ## 🧩 MVP Prototype (v0.1)
 
-This is the **early concept landing page** and interactive calculator built for:
-- Y Combinator application (Winter 2026 batch)
-- Product waitlist validation
-- Early design / investor demo
+This is the **early concept landing page** and interactive calculator built to:
+- Demonstrate the product vision  
+- Collect early waitlist sign-ups  
+- Share with potential collaborators and testers  
 
 ### 🔗 Live Demo
 ➡️ [Growspent prototype on GitHub Pages](https://shiripatel.github.io/Growspent/)
@@ -32,7 +32,7 @@ This is the **early concept landing page** and interactive calculator built for:
 ### 💻 Built With
 - **HTML / CSS / JavaScript** — static landing page prototype  
 - **GitHub Pages** — free hosting  
-- **Formspree / Google Form** (planned) — to collect early access sign-ups  
+- **Formspree / Google Form** (planned) — for early access sign-ups  
 
 ---
 
@@ -49,7 +49,7 @@ This is the **early concept landing page** and interactive calculator built for:
 
 ## ⚙️ How to Run Locally
 
-1. Clone the repo:
+1. Clone the repo  
    ```bash
    git clone https://github.com/Shiripatel/Growspent.git
    cd Growspent
