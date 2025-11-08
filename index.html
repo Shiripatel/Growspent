@@ -530,7 +530,7 @@
       margin-bottom: 2px;
     }
 
-    /* CALCULATOR + WAITLIST */
+    /* GOALS */
 
     .two-column {
       display: grid;
@@ -544,6 +544,62 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .goals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .goals-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .goal-card {
+      background: #f9fbfd;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 10px 10px 12px;
+      font-size: 0.86rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .goal-tag {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .goal-name {
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .goal-progress-bar-outer {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: #e4ebf5;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .goal-progress-bar-inner {
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--green), var(--accent));
+    }
+
+    .goal-progress-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* CALC + WAITLIST + GOAL DEMO BASE CARD */
 
     .card {
       background: var(--white);
@@ -674,7 +730,7 @@
         <div class="logo-text">Growspent</div>
       </div>
       <div class="nav-links">
-        <div class="nav-link" onclick="scrollToId('features')">Features</div>
+        <div class="nav-link" onclick="scrollToId('goals')">Goals</div>
         <div class="nav-link" onclick="scrollToId('how')">How it works</div>
         <div class="nav-link" onclick="scrollToId('security')">Security</div>
         <div class="nav-link" onclick="scrollToId('waitlist')">Early access</div>
@@ -705,8 +761,8 @@
             <button class="btn-hero-primary" onclick="scrollToId('waitlist')">
               Get early access
             </button>
-            <button class="btn-hero-secondary" onclick="scrollToId('how')">
-              See how Growspent works
+            <button class="btn-hero-secondary" onclick="scrollToId('goals')">
+              See the goals you can hit
             </button>
           </div>
           <div class="hero-note">
@@ -728,7 +784,7 @@
                 <div style="font-size:0.72rem; color:#9fe7c9;">▲ +$146.32</div>
               </div>
               <div class="phone-tabs">
-                <div class="phone-tab phone-tab--active">Grow</div>
+                <div class="phone-tab phone-tab--active">Goals</div>
                 <div class="phone-tab">Spend</div>
                 <div class="phone-tab">Save</div>
               </div>
@@ -736,16 +792,16 @@
 
             <div class="phone-list">
               <div class="phone-list-row">
-                <div class="phone-list-label">Round-ups this week</div>
-                <div class="phone-list-value">$23.40</div>
+                <div class="phone-list-label">College fees</div>
+                <div class="phone-list-value">48% funded</div>
               </div>
               <div class="phone-list-row">
-                <div class="phone-list-label">Auto-invest from spending</div>
-                <div class="phone-list-value">$146.80</div>
+                <div class="phone-list-label">PlayStation upgrade</div>
+                <div class="phone-list-value">32% funded</div>
               </div>
               <div class="phone-list-row">
-                <div class="phone-list-label">Next transfer</div>
-                <div class="phone-list-value">Fri • $35.00</div>
+                <div class="phone-list-label">Home down payment</div>
+                <div class="phone-list-value">19% funded</div>
               </div>
               <div class="phone-chart">
                 <div class="phone-chart-line"></div>
@@ -755,7 +811,7 @@
 
             <div class="hero-card-footnote">
               Example numbers only. Interface shown is a design preview of
-              Growspent’s mobile app.
+              Growspent’s goals dashboard.
             </div>
           </div>
         </div>
@@ -879,6 +935,124 @@
             Over a year, the same pattern would send around
             <strong>$1,900+</strong> into savings and investments — without you
             having to log in every week.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOALS SECTION -->
+    <section id="goals">
+      <div class="section-tag">Goals that feel real</div>
+      <h2 class="section-heading">From college fees to PlayStations to home deposits.</h2>
+      <p class="section-subheading">
+        Growspent lets you aim your micro-investments at concrete goals — like
+        next semester’s tuition, a new console, a bike, or a future home. Every
+        coffee, ride, and grocery trip can move you a little closer.
+      </p>
+
+      <div class="two-column">
+        <!-- Example goal cards -->
+        <div>
+          <div class="goals-grid">
+            <div class="goal-card">
+              <div class="goal-tag">Student goal 🎓</div>
+              <div class="goal-name">Next semester fees</div>
+              <div class="goal-progress-bar-outer">
+                <div class="goal-progress-bar-inner" style="width: 42%;"></div>
+              </div>
+              <div class="goal-progress-label">42% funded • Built from daily spending</div>
+              <p class="muted" style="margin-top:4px;">
+                A small percentage of everyday card payments quietly builds
+                toward tuition — long before deadlines show up.
+              </p>
+            </div>
+            <div class="goal-card">
+              <div class="goal-tag">Treat-yourself goal 🎮</div>
+              <div class="goal-name">PlayStation upgrade</div>
+              <div class="goal-progress-bar-outer">
+                <div class="goal-progress-bar-inner" style="width: 65%;"></div>
+              </div>
+              <div class="goal-progress-label">65% funded • Powered by coffee & food orders</div>
+              <p class="muted" style="margin-top:4px;">
+                See how “just coffee” adds up. Growspent turns small, frequent
+                spends into a future console or laptop.
+              </p>
+            </div>
+            <div class="goal-card">
+              <div class="goal-tag">Long-term goal 🏠</div>
+              <div class="goal-name">Home down payment</div>
+              <div class="goal-progress-bar-outer">
+                <div class="goal-progress-bar-inner" style="width: 18%;"></div>
+              </div>
+              <div class="goal-progress-label">18% funded • Slow and steady progress</div>
+              <p class="muted" style="margin-top:4px;">
+                Use a portion of every micro-investment to chip away at a bigger
+                dream without relying on one big decision later.
+              </p>
+            </div>
+            <div class="goal-card">
+              <div class="goal-tag">Lifestyle goal 👟</div>
+              <div class="goal-name">Fashion & sneaker fund</div>
+              <div class="goal-progress-bar-outer">
+                <div class="goal-progress-bar-inner" style="width: 54%;"></div>
+              </div>
+              <div class="goal-progress-label">54% funded • For guilt-free splurges</div>
+              <p class="muted" style="margin-top:4px;">
+                Keep a dedicated “style” goal so that when the right drop or
+                sale shows up, you already have money waiting.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive goal demo -->
+        <div class="card">
+          <div class="section-tag" style="margin-bottom:4px;">Goal demo</div>
+          <h3 class="section-heading" style="font-size:1.1rem; margin-bottom:4px;">
+            See how long your micro-investing could take to reach a goal.
+          </h3>
+          <p class="section-subheading" style="margin-bottom:10px;">
+            Pick a goal amount and a realistic monthly contribution from your
+            everyday spending. We’ll estimate the time to get there.
+          </p>
+
+          <div class="calc-row">
+            <div style="flex:1 1 140px;">
+              <label for="goal-name">Goal (optional)</label>
+              <input id="goal-name" type="text" placeholder="e.g. PlayStation, bike, tuition" />
+            </div>
+          </div>
+          <div class="calc-row">
+            <div style="flex:1 1 140px;">
+              <label for="goal-target">Goal amount ($)</label>
+              <input id="goal-target" type="number" min="0" placeholder="e.g. 500" />
+            </div>
+            <div style="flex:1 1 140px;">
+              <label for="goal-monthly">Monthly from micro-investing ($)</label>
+              <input id="goal-monthly" type="number" min="0" placeholder="e.g. 40" />
+            </div>
+          </div>
+
+          <button class="btn-small" onclick="runGoalDemo()">Estimate goal timeline</button>
+
+          <div id="goal-output" class="calc-output" style="display:none;">
+            At
+            <span id="goal-monthly-amount" class="calc-highlight">$0</span>
+            per month toward
+            <span id="goal-name-label" class="calc-highlight">your goal</span>
+            of
+            <span id="goal-target-amount" class="calc-highlight">$0</span>,
+            it would take about
+            <span id="goal-months" class="calc-highlight">0</span>
+            months
+            (<span id="goal-years" class="calc-highlight">0</span>
+            years) to get there — before any investment growth.
+          </div>
+
+          <p class="muted" style="margin-top:8px; font-size:0.78rem;">
+            This is a simple time estimate based on contributions alone. In
+            reality, investment returns and changes to your rules could help you
+            reach some goals sooner.
           </p>
         </div>
       </div>
@@ -1042,6 +1216,38 @@
       mSpan.textContent = "$" + monthlyInvest.toFixed(2);
       ySpan.textContent = "$" + yearlyInvest.toFixed(0);
       tenSpan.textContent = "$" + tenYearValue.toFixed(0);
+
+      out.style.display = "block";
+    }
+
+    function runGoalDemo() {
+      const nameInput = document.getElementById("goal-name");
+      const targetInput = document.getElementById("goal-target");
+      const monthlyInput = document.getElementById("goal-monthly");
+      const out = document.getElementById("goal-output");
+
+      const name = (nameInput.value || "").trim();
+      const target = parseFloat(targetInput.value || "0");
+      const monthly = parseFloat(monthlyInput.value || "0");
+
+      if (target <= 0 || monthly <= 0) {
+        out.style.display = "none";
+        return;
+      }
+
+      const months = Math.ceil(target / monthly);
+      const years = (months / 12);
+
+      document.getElementById("goal-monthly-amount").textContent =
+        "$" + monthly.toFixed(2);
+      document.getElementById("goal-target-amount").textContent =
+        "$" + target.toFixed(0);
+      document.getElementById("goal-months").textContent = months.toString();
+      document.getElementById("goal-years").textContent =
+        years.toFixed(years < 3 ? 1 : 0);
+
+      document.getElementById("goal-name-label").textContent =
+        name && name.length > 0 ? name : "your goal";
 
       out.style.display = "block";
     }
