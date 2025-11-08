@@ -6,19 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Growspent helps you automate saving and investing by putting a small part of every purchase to work for your future."
+    content="Growspent helps you put a small part of every purchase toward your future with automated saving and investing rules."
   />
   <style>
     :root {
-      --green: #0c7b61;
-      --green-dark: #045243;
-      --green-soft: #e6f4ef;
-      --accent: #1ec088;
-      --text: #08141d;
-      --muted: #607184;
-      --bg: #f5f7fa;
-      --white: #ffffff;
-      --border: #dde3ec;
+      --bg: #050216;
+      --bg-soft: #0b0524;
+      --bg-softer: #12082f;
+      --card: #140a33;
+      --card-alt: #190f3e;
+      --accent: #ff4ecd;
+      --accent-soft: #ff9cf0;
+      --accent-blue: #4ac5ff;
+      --text: #f9f5ff;
+      --muted: #b2a5d9;
+      --border: #2c1e59;
+      --border-soft: #221747;
       --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
               "Segoe UI", sans-serif;
     }
@@ -30,7 +33,7 @@
     body {
       margin: 0;
       font-family: var(--font);
-      background: var(--bg);
+      background: radial-gradient(circle at top, #381170 0, #050216 55%, #020010 100%);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
     }
@@ -66,28 +69,29 @@
     }
 
     .logo-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 12px;
-      background: radial-gradient(circle at 25% 20%, #ffffff 0, #1ec088 40%, #0c7b61 100%);
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 20%, #ffffff 0, #ff7cf0 35%, #4b1a9a 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #083024;
+      color: #150823;
       font-weight: 800;
       font-size: 0.8rem;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
     }
 
     .logo-text {
       font-weight: 700;
       letter-spacing: -0.04em;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
       font-size: 0.9rem;
       color: var(--muted);
     }
@@ -97,13 +101,13 @@
     }
 
     .nav-link:hover {
-      color: var(--green-dark);
+      color: #ffffff;
     }
 
     .nav-cta {
       display: flex;
-      align-items: center;
       gap: 10px;
+      align-items: center;
     }
 
     .btn-nav-outline {
@@ -119,12 +123,13 @@
     .btn-nav-primary {
       border-radius: 999px;
       border: none;
-      padding: 9px 18px;
+      padding: 8px 18px;
       cursor: pointer;
-      background: var(--green);
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+      color: #050216;
       font-size: 0.9rem;
       font-weight: 600;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
     }
 
     @media (max-width: 800px) {
@@ -136,17 +141,18 @@
     /* HERO */
 
     .hero-wrapper {
-      margin-top: 28px;
-      border-radius: 24px;
+      margin-top: 26px;
+      border-radius: 26px;
       overflow: hidden;
-      background-color: var(--green-dark);
-      color: #ffffff;
+      background: radial-gradient(circle at top left, #2b0d68, #080219 55%);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-      gap: 24px;
+      grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.4fr);
+      gap: 28px;
       padding: 40px 32px 44px;
       align-items: center;
     }
@@ -154,42 +160,28 @@
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
-        padding: 32px 20px 36px;
+        padding: 30px 20px 32px;
       }
     }
 
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(5, 30, 25, 0.7);
-    }
-
-    .hero-tag-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      color: var(--accent-soft);
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 3.4vw + 1.4rem, 3rem);
+      font-size: clamp(2.2rem, 3.6vw + 1.4rem, 3.2rem);
       margin: 14px 0 8px;
-      letter-spacing: -0.05em;
-      font-weight: 700;
-    }
-
-    .hero-title span {
-      color: var(--accent);
+      letter-spacing: -0.06em;
+      font-weight: 800;
     }
 
     .hero-subtitle {
-      font-size: 0.98rem;
+      font-size: 0.96rem;
+      color: var(--muted);
       max-width: 29rem;
-      color: #e2f3ee;
       margin-bottom: 18px;
     }
 
@@ -204,33 +196,33 @@
     .btn-hero-primary {
       border-radius: 999px;
       border: none;
-      padding: 11px 20px;
+      padding: 11px 22px;
       cursor: pointer;
-      background: #ffffff;
-      color: var(--green-dark);
+      background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+      color: #050216;
       font-size: 0.95rem;
       font-weight: 600;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.7);
     }
 
     .btn-hero-secondary {
       border-radius: 999px;
-      border: 1px solid rgba(188, 218, 209, 0.5);
+      border: 1px solid var(--border);
       padding: 9px 16px;
       cursor: pointer;
-      background: transparent;
-      color: #d0e7df;
+      background: rgba(7, 3, 30, 0.8);
+      color: var(--muted);
       font-size: 0.9rem;
     }
 
     .hero-note {
       font-size: 0.8rem;
-      color: #c3e0d7;
+      color: var(--muted);
     }
 
     /* HERO MOCK */
 
     .hero-mock {
-      position: relative;
       display: flex;
       justify-content: center;
     }
@@ -238,28 +230,28 @@
     .phone {
       width: 260px;
       max-width: 100%;
-      border-radius: 30px;
-      background: linear-gradient(160deg, #0a3b30, #0f8a66);
+      border-radius: 28px;
+      background: radial-gradient(circle at top, #4b1a9a, #130529 70%);
       padding: 14px 12px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
-      border: 1px solid rgba(5, 15, 12, 0.5);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(135, 82, 255, 0.4);
     }
 
     .phone-notch {
       width: 60%;
       height: 8px;
       border-radius: 0 0 12px 12px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
       margin: 0 auto 10px;
     }
 
     .phone-balance-card {
-      background: rgba(4, 46, 34, 0.9);
-      border-radius: 14px;
-      padding: 10px 10px 12px;
+      background: rgba(11, 3, 40, 0.9);
+      border-radius: 16px;
+      padding: 9px 10px 12px;
       margin-bottom: 10px;
-      color: #e4f6f0;
       font-size: 0.78rem;
+      border: 1px solid rgba(132, 84, 255, 0.6);
     }
 
     .phone-balance-row {
@@ -269,12 +261,20 @@
     }
 
     .phone-balance-label {
-      opacity: 0.8;
+      color: var(--muted);
+      font-size: 0.72rem;
     }
 
     .phone-balance-value {
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-soft);
+    }
+
+    .phone-balance-change {
+      font-size: 0.74rem;
+      color: #6dffa7;
+      margin-top: 4px;
     }
 
     .phone-tabs {
@@ -288,123 +288,121 @@
       border-radius: 999px;
       padding: 4px 6px;
       text-align: center;
-      font-size: 0.72rem;
-      background: rgba(3, 30, 23, 0.4);
+      font-size: 0.7rem;
+      background: rgba(20, 10, 51, 0.9);
+      color: var(--muted);
     }
 
     .phone-tab--active {
-      background: #ffffff;
-      color: var(--green-dark);
+      background: #f9f5ff;
+      color: #150823;
       font-weight: 600;
     }
 
     .phone-list {
       margin-top: 8px;
-      border-radius: 14px;
-      background: rgba(2, 25, 19, 0.7);
+      border-radius: 16px;
+      background: rgba(10, 3, 38, 0.96);
       padding: 8px 9px 10px;
       font-size: 0.76rem;
-      color: #e0f1eb;
+      color: var(--text);
+      border: 1px solid rgba(76, 48, 158, 0.9);
     }
 
-    .phone-list-row {
+    .phone-row {
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(63, 40, 126, 0.7);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 5px 0;
+      gap: 8px;
     }
 
-    .phone-list-label {
-      opacity: 0.8;
+    .phone-row:last-child {
+      border-bottom: none;
     }
 
-    .phone-list-value {
-      font-weight: 600;
+    .phone-row-main {
+      font-weight: 500;
+      font-size: 0.78rem;
     }
 
-    .phone-chart {
-      margin-top: 8px;
-      height: 54px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, rgba(225, 255, 243, 0.1), rgba(0, 0, 0, 0.02));
-      position: relative;
+    .phone-row-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .phone-row-progress {
+      flex: 1;
+      margin-left: 10px;
+    }
+
+    .phone-progress-outer {
+      width: 100%;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(70, 48, 135, 0.8);
       overflow: hidden;
     }
 
-    .phone-chart-line {
-      position: absolute;
-      inset: 14px 10px 12px;
+    .phone-progress-inner {
+      height: 5px;
       border-radius: 999px;
-      border: 1px solid rgba(231, 255, 243, 0.8);
-      border-left-color: transparent;
-      border-bottom-color: transparent;
-      transform: skewX(-14deg);
+      background: linear-gradient(90deg, var(--accent-soft), var(--accent-blue));
     }
 
-    .phone-chart-dot {
-      position: absolute;
-      right: 14px;
-      top: 16px;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #ffffff;
+    /* METRICS STRIP */
+
+    .metric-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 18px;
+      font-size: 0.84rem;
+      color: var(--muted);
     }
 
-    .hero-card-footnote {
-      margin-top: 6px;
-      font-size: 0.7rem;
-      color: #cde5dd;
-      opacity: 0.9;
+    .metric-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(7, 3, 28, 0.85);
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .metric-value {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
     }
 
     /* SECTION LAYOUT */
 
     section {
-      margin-top: 48px;
+      margin-top: 46px;
+    }
+
+    .section-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
 
     .section-heading {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 600;
       margin-bottom: 6px;
     }
 
     .section-subheading {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--muted);
       margin-bottom: 18px;
-      max-width: 36rem;
-    }
-
-    .section-tag {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    /* PROBLEM */
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .problem-card {
-      background: var(--white);
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      padding: 14px 12px 16px;
-      font-size: 0.88rem;
-    }
-
-    .problem-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-      font-size: 0.95rem;
+      max-width: 38rem;
     }
 
     .muted {
@@ -412,130 +410,94 @@
       font-size: 0.86rem;
     }
 
-    @media (max-width: 900px) {
-      .problem-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
+    /* PREVIEW DASHBOARDS */
 
-    @media (max-width: 640px) {
-      .problem-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* HOW IT WORKS */
-
-    .steps-grid {
+    .preview-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .step-card {
-      background: #f9fbfd;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      padding: 14px 12px 16px;
-      font-size: 0.88rem;
-    }
-
-    .step-number {
-      width: 24px;
-      height: 24px;
-      border-radius: 999px;
-      background: var(--green-soft);
-      color: var(--green-dark);
-      font-size: 0.78rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-
-    .step-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-      font-size: 0.95rem;
-    }
-
     @media (max-width: 900px) {
-      .steps-grid {
+      .preview-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 640px) {
-      .steps-grid {
+      .preview-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    /* FEATURES / VALUE */
-
-    .feature-highlight {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 800px) {
-      .feature-highlight {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 0.9rem;
-    }
-
-    .feature-list li {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-      color: var(--muted);
-    }
-
-    .feature-bullet {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      margin-top: 6px;
-      background: var(--green);
-    }
-
-    .feature-card-small {
-      background: var(--white);
-      border-radius: 16px;
+    .preview-card {
+      background: linear-gradient(145deg, var(--card), var(--card-alt));
+      border-radius: 18px;
+      padding: 12px 12px 14px;
       border: 1px solid var(--border);
-      padding: 14px 14px 16px;
       font-size: 0.86rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
     }
 
-    .feature-card-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
+    .preview-title {
+      font-size: 0.95rem;
+      font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .feature-card-value {
-      font-weight: 600;
-      margin-bottom: 2px;
+    .preview-tag {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-bottom: 6px;
     }
 
-    /* GOALS */
+    .preview-chart {
+      margin-top: 6px;
+      border-radius: 12px;
+      background: radial-gradient(circle at top left, #3d1b86, #14082e);
+      height: 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-line {
+      position: absolute;
+      inset: 18px 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(143, 236, 255, 0.8);
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      transform: skewX(-18deg);
+    }
+
+    .preview-dot {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+    }
+
+    .preview-pill {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(9, 252, 173, 0.12);
+      color: #88ffd2;
+      margin-top: 6px;
+    }
+
+    /* TWO COLUMN GENERIC */
 
     .two-column {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 22px;
+      gap: 24px;
       align-items: flex-start;
     }
 
@@ -544,6 +506,8 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* GOAL CARDS */
 
     .goals-grid {
       display: grid;
@@ -558,19 +522,17 @@
     }
 
     .goal-card {
-      background: #f9fbfd;
-      border-radius: 14px;
+      background: linear-gradient(145deg, #150a33, #1a0f40);
+      border-radius: 16px;
       border: 1px solid var(--border);
       padding: 10px 10px 12px;
       font-size: 0.86rem;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
     }
 
     .goal-tag {
       font-size: 0.75rem;
       color: var(--muted);
+      margin-bottom: 2px;
     }
 
     .goal-name {
@@ -578,35 +540,36 @@
       font-size: 0.94rem;
     }
 
-    .goal-progress-bar-outer {
+    .goal-bar-outer {
       width: 100%;
       height: 6px;
       border-radius: 999px;
-      background: #e4ebf5;
+      background: #261558;
       overflow: hidden;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
-    .goal-progress-bar-inner {
+    .goal-bar-inner {
       height: 6px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--green), var(--accent));
+      background: linear-gradient(90deg, var(--accent), var(--accent-blue));
     }
 
-    .goal-progress-label {
+    .goal-label {
       font-size: 0.78rem;
       color: var(--muted);
       margin-top: 2px;
     }
 
-    /* CALC + WAITLIST + GOAL DEMO BASE CARD */
+    /* GENERIC CARD (CALC / WAITLIST / GOAL DEMO) */
 
     .card {
-      background: var(--white);
-      border-radius: 16px;
+      background: var(--bg-soft);
+      border-radius: 18px;
       border: 1px solid var(--border);
       padding: 16px 14px 18px;
       font-size: 0.9rem;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.8);
     }
 
     .calc-row {
@@ -624,32 +587,33 @@
     }
 
     input[type="number"],
-    input[type="email"] {
+    input[type="email"],
+    input[type="text"] {
       width: 100%;
       padding: 8px 9px;
       border-radius: 10px;
       border: 1px solid var(--border);
-      background: #f9fbfd;
+      background: #0b0524;
       color: var(--text);
       font-size: 0.86rem;
       outline: none;
     }
 
     input::placeholder {
-      color: #9aa6b8;
+      color: #8172b6;
     }
 
     .calc-output {
       margin-top: 8px;
       padding: 9px 10px;
       border-radius: 10px;
-      background: var(--green-soft);
+      background: rgba(33, 196, 147, 0.18);
       font-size: 0.84rem;
       color: var(--text);
     }
 
     .calc-highlight {
-      color: var(--green-dark);
+      color: #86ffd3;
       font-weight: 600;
     }
 
@@ -658,8 +622,8 @@
       border: none;
       padding: 8px 14px;
       cursor: pointer;
-      background: var(--green);
-      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+      color: #050216;
       font-size: 0.86rem;
       font-weight: 600;
       margin-top: 4px;
@@ -679,7 +643,7 @@
       }
     }
 
-    /* SECURITY / FOOTER */
+    /* SECURITY */
 
     .security-list {
       list-style: none;
@@ -699,17 +663,17 @@
       width: 14px;
       height: 14px;
       border-radius: 999px;
-      border: 2px solid var(--green);
+      border: 2px solid #88ffd3;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.7rem;
-      color: var(--green);
+      color: #88ffd3;
       margin-top: 4px;
     }
 
     footer {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--border-soft);
       margin-top: 40px;
       padding-top: 16px;
       font-size: 0.8rem;
@@ -737,7 +701,7 @@
       </div>
       <div class="nav-cta">
         <button class="btn-nav-outline" onclick="scrollToId('waitlist')">Log in (coming soon)</button>
-        <button class="btn-nav-primary" onclick="scrollToId('waitlist')">Get started</button>
+        <button class="btn-nav-primary" onclick="scrollToId('waitlist')">Early access</button>
       </div>
     </nav>
 
@@ -745,13 +709,8 @@
     <div class="hero-wrapper">
       <section class="hero">
         <div>
-          <div class="hero-tag">
-            <span class="hero-tag-dot"></span>
-            Automated saving and investing from everyday spending
-          </div>
-          <h1 class="hero-title">
-            Take money <span>off your mind</span>.
-          </h1>
+          <div class="hero-tag">Automated saving and investing</div>
+          <h1 class="hero-title">Take money off your mind.</h1>
           <p class="hero-subtitle">
             Growspent helps you put a small part of every purchase toward your
             future. Set your rules once and let saving and investing run quietly
@@ -761,13 +720,24 @@
             <button class="btn-hero-primary" onclick="scrollToId('waitlist')">
               Get early access
             </button>
-            <button class="btn-hero-secondary" onclick="scrollToId('goals')">
-              See the goals you can hit
+            <button class="btn-hero-secondary" onclick="scrollToId('preview')">
+              Preview the dashboards
             </button>
           </div>
           <div class="hero-note">
-            No spreadsheets, no day-trading, no guilt — just a clear plan that
-            moves with your real life.
+            No spreadsheets, no day-trading, no guilt — just a plan that moves
+            with how you actually spend.
+          </div>
+
+          <div class="metric-strip">
+            <div class="metric-pill">
+              <span class="metric-value">5–7%</span>
+              <span>Typical auto-invest as a share of monthly spending in our example flows.</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-value">$40</span>
+              <span>from a $800 spend month can already fund a small goal in under a year.</span>
+            </div>
           </div>
         </div>
 
@@ -776,12 +746,12 @@
             <div class="phone-notch"></div>
             <div class="phone-balance-card">
               <div class="phone-balance-row">
-                <div class="phone-balance-label">Growspent balance</div>
-                <div style="font-size:0.7rem; opacity:0.8;">Today</div>
+                <span class="phone-balance-label">Growspent balance</span>
+                <span style="font-size:0.7rem; color:var(--muted);">Today</span>
               </div>
-              <div class="phone-balance-row" style="margin-top:6px;">
-                <div class="phone-balance-value">$12,095.76</div>
-                <div style="font-size:0.72rem; color:#9fe7c9;">▲ +$146.32</div>
+              <div class="phone-balance-row" style="margin-top:4px;">
+                <span class="phone-balance-value">$12,095.76</span>
+                <span class="phone-balance-change">▲ +$146.32</span>
               </div>
               <div class="phone-tabs">
                 <div class="phone-tab phone-tab--active">Goals</div>
@@ -791,63 +761,105 @@
             </div>
 
             <div class="phone-list">
-              <div class="phone-list-row">
-                <div class="phone-list-label">College fees</div>
-                <div class="phone-list-value">48% funded</div>
+              <div class="phone-row">
+                <div>
+                  <div class="phone-row-main">College fees</div>
+                  <div class="phone-row-sub">48% funded</div>
+                </div>
+                <div class="phone-row-progress">
+                  <div class="phone-progress-outer">
+                    <div class="phone-progress-inner" style="width:48%;"></div>
+                  </div>
+                </div>
               </div>
-              <div class="phone-list-row">
-                <div class="phone-list-label">PlayStation upgrade</div>
-                <div class="phone-list-value">32% funded</div>
+              <div class="phone-row">
+                <div>
+                  <div class="phone-row-main">PlayStation upgrade</div>
+                  <div class="phone-row-sub">32% funded • from coffee & food orders</div>
+                </div>
+                <div class="phone-row-progress">
+                  <div class="phone-progress-outer">
+                    <div class="phone-progress-inner" style="width:32%;"></div>
+                  </div>
+                </div>
               </div>
-              <div class="phone-list-row">
-                <div class="phone-list-label">Home down payment</div>
-                <div class="phone-list-value">19% funded</div>
-              </div>
-              <div class="phone-chart">
-                <div class="phone-chart-line"></div>
-                <div class="phone-chart-dot"></div>
+              <div class="phone-row">
+                <div>
+                  <div class="phone-row-main">Home down payment</div>
+                  <div class="phone-row-sub">19% funded • slow and steady</div>
+                </div>
+                <div class="phone-row-progress">
+                  <div class="phone-progress-outer">
+                    <div class="phone-progress-inner" style="width:19%;"></div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="hero-card-footnote">
-              Example numbers only. Interface shown is a design preview of
-              Growspent’s goals dashboard.
+            <div class="hero-note" style="margin-top:8px; font-size:0.72rem;">
+              Example numbers only. Interface shown is a design preview of the
+              Growspent app.
             </div>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- PROBLEM -->
-    <section id="features">
-      <div class="section-tag">The problem</div>
-      <h2 class="section-heading">People want a plan. What they get is friction.</h2>
+    <!-- DASHBOARD PREVIEW -->
+    <section id="preview">
+      <div class="section-tag">Product preview</div>
+      <h2 class="section-heading">See what Growspent will look like in action.</h2>
       <p class="section-subheading">
-        You know you should be saving and investing. But between rent, bills,
-        and everything else, it’s easy to postpone the setup work and fall back
-        into “I’ll do it next month.”
+        These UI previews show how you’ll track spending, goals, and long-term
+        growth at a glance — without digging through spreadsheets or statements.
       </p>
 
-      <div class="problem-grid">
-        <div class="problem-card">
-          <div class="problem-title">Too many steps</div>
-          <p class="muted">
-            Opening accounts, picking products, scheduling transfers, tracking
-            everything manually — every extra click is a reason to delay.
+      <div class="preview-grid">
+        <div class="preview-card">
+          <div class="preview-title">Spending & auto-invest</div>
+          <div class="preview-tag">Understand where your money flows</div>
+          <div class="preview-chart">
+            <div class="preview-line"></div>
+            <div class="preview-dot"></div>
+          </div>
+          <div class="preview-pill">
+            ▲ +$142 auto-invested from last month’s card spend
+          </div>
+          <p class="muted" style="margin-top:6px;">
+            See how much of your everyday spend was quietly redirected into
+            savings and investing — by category and rule.
           </p>
         </div>
-        <div class="problem-card">
-          <div class="problem-title">Tools that guilt you</div>
-          <p class="muted">
-            Many apps tell you what you “should” be doing, then ping you with
-            alerts when you fall behind. That creates stress, not progress.
+
+        <div class="preview-card">
+          <div class="preview-title">Goal progress dashboard</div>
+          <div class="preview-tag">From tuition to treats</div>
+          <div class="preview-chart">
+            <div class="preview-line" style="border-color:rgba(255,158,240,0.9);"></div>
+            <div class="preview-dot" style="background:var(--accent);"></div>
+          </div>
+          <div class="preview-pill">
+            🎯 3 active goals • 1 nearly complete
+          </div>
+          <p class="muted" style="margin-top:6px;">
+            Track student goals, lifestyle upgrades, and long-term dreams in one
+            place — each fueled by micro-investments from your spending.
           </p>
         </div>
-        <div class="problem-card">
-          <div class="problem-title">Life is not a spreadsheet</div>
-          <p class="muted">
-            Some months are smooth, some aren’t. Static savings rules don’t
-            adjust when cash is tight or when you could comfortably save more.
+
+        <div class="preview-card">
+          <div class="preview-title">Growth over time</div>
+          <div class="preview-tag">Zoom out and see the compounding</div>
+          <div class="preview-chart">
+            <div class="preview-line" style="border-color:rgba(134,255,211,0.9);"></div>
+            <div class="preview-dot" style="background:#86ffd3;"></div>
+          </div>
+          <div class="preview-pill">
+            10-year projection based on your rules
+          </div>
+          <p class="muted" style="margin-top:6px;">
+            A clean, long-term view of how small recurring amounts and market
+            growth could add up — no trading screen required.
           </p>
         </div>
       </div>
@@ -863,143 +875,98 @@
         that protect your cash flow.
       </p>
 
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-title">Connect your accounts</div>
+      <div class="preview-grid">
+        <div class="preview-card">
+          <div class="preview-title">1. Connect your accounts</div>
+          <div class="preview-tag">Secure bank & card connection</div>
           <p class="muted">
-            Link your bank and cards securely through a regulated data partner.
-            Growspent reads transaction amounts, not what you buy.
+            Link your bank and cards through a regulated data partner. We see
+            amounts and merchants — not card numbers — so we can calculate safe
+            micro-contributions.
           </p>
         </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-title">Choose your rules</div>
+        <div class="preview-card">
+          <div class="preview-title">2. Choose your rules</div>
+          <div class="preview-tag">Round-ups, % of spend, or pay-day rules</div>
           <p class="muted">
-            Set round-ups, fixed percentages (for example 3–7% of spending), or
-            monthly caps. Decide how much goes to savings, debt paydown, and
-            long-term investing.
+            Decide how much to set aside each time you pay: classic round-ups,
+            3–7% of each purchase, or a slice of every paycheck. Allocate across
+            goals with simple sliders.
           </p>
         </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-title">Let it run on autopilot</div>
+        <div class="preview-card">
+          <div class="preview-title">3. Let it run on autopilot</div>
+          <div class="preview-tag">Cash-flow-aware automation</div>
           <p class="muted">
-            Growspent monitors your cash flow, easing off when your balance is
-            low and gently increasing contributions when there is room to save.
+            Growspent slows down or pauses when your balance is low, and ramps
+            back up when there’s room. You see the results — not the micro-moves.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- VALUE / DIFFERENTIATION -->
-    <section>
-      <div class="section-tag">Why Growspent</div>
-      <h2 class="section-heading">A plan that respects your real life.</h2>
-      <p class="section-subheading">
-        Less “do more” pressure. More automation, guardrails, and clear
-        visibility into the progress you’re making from the spending you
-        already do.
-      </p>
-
-      <div class="feature-highlight">
-        <div>
-          <ul class="feature-list">
-            <li>
-              <span class="feature-bullet"></span>
-              <span><strong>Cash-flow-aware automation:</strong> contributions pause or slow down when your account is low, so you’re not surprised by transfers.</span>
-            </li>
-            <li>
-              <span class="feature-bullet"></span>
-              <span><strong>Multiple goals from one stream of spending:</strong> split each contribution between emergency savings, debt paydown, and investing.</span>
-            </li>
-            <li>
-              <span class="feature-bullet"></span>
-              <span><strong>Simple, transparent view:</strong> see exactly how much of your monthly spending was converted into long-term progress.</span>
-            </li>
-            <li>
-              <span class="feature-bullet"></span>
-              <span><strong>No day-trading or hot tips:</strong> the focus is on steady, diversified growth rather than chasing the latest market story.</span>
-            </li>
-          </ul>
-        </div>
-        <div class="feature-card-small">
-          <div class="feature-card-label">Example snapshot</div>
-          <div class="feature-card-value">Last 30 days with Growspent</div>
-          <p class="muted" style="margin-bottom:8px;">
-            • $3,200 total card spending  
-            • 5% rule applied  
-            • $160 quietly redirected toward your future
-          </p>
-          <p class="muted" style="font-size:0.8rem;">
-            Over a year, the same pattern would send around
-            <strong>$1,900+</strong> into savings and investments — without you
-            having to log in every week.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- GOALS SECTION -->
+    <!-- GOALS -->
     <section id="goals">
       <div class="section-tag">Goals that feel real</div>
-      <h2 class="section-heading">From college fees to PlayStations to home deposits.</h2>
+      <h2 class="section-heading">From college fees and consoles to cars and homes.</h2>
       <p class="section-subheading">
-        Growspent lets you aim your micro-investments at concrete goals — like
-        next semester’s tuition, a new console, a bike, or a future home. Every
-        coffee, ride, and grocery trip can move you a little closer.
+        Aim your micro-investing at specific outcomes: tuition, a PlayStation,
+        a bike, a fashion fund, or a future home deposit. Growspent makes the
+        progress visible so daily decisions feel worth it.
       </p>
 
       <div class="two-column">
-        <!-- Example goal cards -->
         <div>
           <div class="goals-grid">
             <div class="goal-card">
               <div class="goal-tag">Student goal 🎓</div>
               <div class="goal-name">Next semester fees</div>
-              <div class="goal-progress-bar-outer">
-                <div class="goal-progress-bar-inner" style="width: 42%;"></div>
+              <div class="goal-bar-outer">
+                <div class="goal-bar-inner" style="width:42%;"></div>
               </div>
-              <div class="goal-progress-label">42% funded • Built from daily spending</div>
+              <div class="goal-label">42% funded • from everyday campus spending</div>
               <p class="muted" style="margin-top:4px;">
-                A small percentage of everyday card payments quietly builds
-                toward tuition — long before deadlines show up.
+                Turn food, rides, and subscriptions into tuition progress months
+                before invoices land.
               </p>
             </div>
+
             <div class="goal-card">
               <div class="goal-tag">Treat-yourself goal 🎮</div>
               <div class="goal-name">PlayStation upgrade</div>
-              <div class="goal-progress-bar-outer">
-                <div class="goal-progress-bar-inner" style="width: 65%;"></div>
+              <div class="goal-bar-outer">
+                <div class="goal-bar-inner" style="width:65%;"></div>
               </div>
-              <div class="goal-progress-label">65% funded • Powered by coffee & food orders</div>
+              <div class="goal-label">65% funded • powered by coffee runs</div>
               <p class="muted" style="margin-top:4px;">
-                See how “just coffee” adds up. Growspent turns small, frequent
-                spends into a future console or laptop.
+                See exactly how “just coffee” stacks up into your next console,
+                laptop, or gadget.
               </p>
             </div>
+
             <div class="goal-card">
               <div class="goal-tag">Long-term goal 🏠</div>
               <div class="goal-name">Home down payment</div>
-              <div class="goal-progress-bar-outer">
-                <div class="goal-progress-bar-inner" style="width: 18%;"></div>
+              <div class="goal-bar-outer">
+                <div class="goal-bar-inner" style="width:18%;"></div>
               </div>
-              <div class="goal-progress-label">18% funded • Slow and steady progress</div>
+              <div class="goal-label">18% funded • steady weekly contributions</div>
               <p class="muted" style="margin-top:4px;">
-                Use a portion of every micro-investment to chip away at a bigger
-                dream without relying on one big decision later.
+                Allocate a slice of each micro-investment to slowly build a
+                serious future asset alongside smaller wins.
               </p>
             </div>
+
             <div class="goal-card">
               <div class="goal-tag">Lifestyle goal 👟</div>
               <div class="goal-name">Fashion & sneaker fund</div>
-              <div class="goal-progress-bar-outer">
-                <div class="goal-progress-bar-inner" style="width: 54%;"></div>
+              <div class="goal-bar-outer">
+                <div class="goal-bar-inner" style="width:54%;"></div>
               </div>
-              <div class="goal-progress-label">54% funded • For guilt-free splurges</div>
+              <div class="goal-label">54% funded • for guilt-free splurges</div>
               <p class="muted" style="margin-top:4px;">
-                Keep a dedicated “style” goal so that when the right drop or
-                sale shows up, you already have money waiting.
+                Keep a dedicated pot for drops and sales so spending there feels
+                planned, not impulsive.
               </p>
             </div>
           </div>
@@ -1009,7 +976,7 @@
         <div class="card">
           <div class="section-tag" style="margin-bottom:4px;">Goal demo</div>
           <h3 class="section-heading" style="font-size:1.1rem; margin-bottom:4px;">
-            See how long your micro-investing could take to reach a goal.
+            How long could your micro-investing take to hit a goal?
           </h3>
           <p class="section-subheading" style="margin-bottom:10px;">
             Pick a goal amount and a realistic monthly contribution from your
@@ -1018,8 +985,8 @@
 
           <div class="calc-row">
             <div style="flex:1 1 140px;">
-              <label for="goal-name">Goal (optional)</label>
-              <input id="goal-name" type="text" placeholder="e.g. PlayStation, bike, tuition" />
+              <label for="goal-name-input">Goal (optional)</label>
+              <input id="goal-name-input" type="text" placeholder="e.g. PlayStation, bike, tuition" />
             </div>
           </div>
           <div class="calc-row">
@@ -1051,8 +1018,8 @@
 
           <p class="muted" style="margin-top:8px; font-size:0.78rem;">
             This is a simple time estimate based on contributions alone. In
-            reality, investment returns and changes to your rules could help you
-            reach some goals sooner.
+            reality, returns and changes to your rules could help you reach some
+            goals sooner.
           </p>
         </div>
       </div>
@@ -1064,9 +1031,9 @@
         <div class="section-tag">Try the math</div>
         <h2 class="section-heading">See what small percentages could do.</h2>
         <p class="section-subheading">
-          This simple calculator gives a rough idea of how much your spending
-          could contribute over time. It’s not financial advice, just a quick
-          way to feel the potential.
+          This calculator gives a rough idea of how much your spending could
+          contribute over time. It’s not financial advice, just a quick way to
+          feel the potential.
         </p>
 
         <div class="calc-row">
@@ -1102,12 +1069,11 @@
         <div class="section-tag">Early access</div>
         <h2 class="section-heading">Be one of the first to try Growspent.</h2>
         <p class="section-subheading">
-          Add your email below if you’d like to hear when the first version is
-          ready. No spam — just an occasional product update and an invite to
-          test.
+          Add your email if you’d like to hear when the first version is ready.
+          No spam — just the occasional product update and an invite to test.
         </p>
 
-        <!-- Replace action with a real endpoint (Formspree / Google Form) later -->
+        <!-- Swap action to a real endpoint later -->
         <form
           class="waitlist-form"
           action="#"
@@ -1127,7 +1093,7 @@
       </div>
     </section>
 
-    <!-- SECURITY / TRUST -->
+    <!-- SECURITY -->
     <section id="security">
       <div class="section-tag">Security & trust</div>
       <h2 class="section-heading">Built with safety as a first-class feature.</h2>
@@ -1156,7 +1122,7 @@
       </ul>
     </section>
 
-    <!-- ABOUT / FOUNDER -->
+    <!-- ABOUT -->
     <section>
       <div class="section-tag">About Growspent</div>
       <h2 class="section-heading">Started by someone who’s seen money from the inside.</h2>
@@ -1208,7 +1174,7 @@
       const monthlyInvest = (monthlySpend * percent) / 100;
       const yearlyInvest = monthlyInvest * 12;
 
-      const r = 0.06; // 6% assumed
+      const r = 0.06;
       const n = 10;
       const fvFactor = (Math.pow(1 + r, n) - 1) / r;
       const tenYearValue = yearlyInvest * fvFactor;
@@ -1221,7 +1187,7 @@
     }
 
     function runGoalDemo() {
-      const nameInput = document.getElementById("goal-name");
+      const nameInput = document.getElementById("goal-name-input");
       const targetInput = document.getElementById("goal-target");
       const monthlyInput = document.getElementById("goal-monthly");
       const out = document.getElementById("goal-output");
@@ -1236,7 +1202,7 @@
       }
 
       const months = Math.ceil(target / monthly);
-      const years = (months / 12);
+      const years = months / 12;
 
       document.getElementById("goal-monthly-amount").textContent =
         "$" + monthly.toFixed(2);
