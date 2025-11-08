@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Growspent – Grow from what you spend</title>
+  <title>Growspent – Grow from what you already spend</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Growspent turns your everyday spending into automatic, stress-free investing."
+    content="Growspent turns your everyday spending into automatic, stress-free saving and investing."
   />
   <style>
     :root {
@@ -29,7 +29,7 @@
     body {
       margin: 0;
       font-family: var(--font);
-      background: radial-gradient(circle at top, #101631 0, #02040a 50%, #000 100%);
+      background: radial-gradient(circle at top, #101631 0, #050815 40%, #02040a 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -447,21 +447,21 @@
             Grow from what you <span>already spend</span>.
           </h1>
           <p class="hero-subtitle">
-            Growspent turns every purchase into a small, automatic contribution
-            toward your future — adjusted to your cash flow, goals, and risk
-            comfort. No budgeting spreadsheets, no guilt, just quiet growth.
+            Growspent turns every purchase into automatic saving and investing. 
+            No budgeting apps, no spreadsheets — just quiet growth in the background
+            while you live your life.
           </p>
           <div class="hero-cta">
             <button class="btn-primary" onclick="document.getElementById('waitlist-email').focus()">
-              Join the early access list →
+              Get early access →
             </button>
             <button class="btn-secondary" onclick="document.getElementById('calc-monthly').scrollIntoView({behavior:'smooth', block:'center'})">
               Try the growth calculator
             </button>
           </div>
           <div class="hero-note">
-            Built for students, young professionals, and anyone who wants to
-            invest without thinking about it all day.
+            Built for students, young professionals, and anyone who wants money to grow
+            without watching markets all day.
           </div>
         </div>
 
@@ -587,9 +587,12 @@
       <section class="two-column">
         <div class="calc-card">
           <h2 class="section-title" style="margin-bottom: 2px;">What could your spending grow into?</h2>
+          <p class="muted" style="font-size:0.78rem;margin-bottom:6px;">
+            Prototype only. These numbers are rough illustrations, not financial advice or guaranteed returns.
+          </p>
           <p class="section-subtitle" style="margin-bottom: 10px;">
-            Rough, back-of-the-envelope projection to feel the potential. Numbers
-            are just for illustration — not a promise.
+            A simple back-of-the-envelope projection to get a feel for how
+            small, consistent amounts can add up over time.
           </p>
 
           <div class="calc-row">
@@ -619,7 +622,7 @@
 
           <div class="muted" style="margin-top: 6px; font-size: 0.76rem;">
             This is for education only, not financial advice. Real life is messier —
-            and that’s exactly what Growspent will help you navigate.
+            and that’s exactly what Growspent aims to help you navigate.
           </div>
         </div>
 
@@ -627,14 +630,14 @@
           <h2 class="section-title">Get on the early access list</h2>
           <p class="section-subtitle">
             Want to try Growspent when the prototype is ready? Drop your email.
-            No spam, just occasional updates and a link when we have something real
-            for you to click.
+            No spam — just occasional updates and a link when there’s something
+            real for you to test.
           </p>
 
           <!-- Replace the `action` with your Formspree / Google Form endpoint later -->
           <form
             class="waitlist-form"
-            action="https://formspree.io/f/your-form-id"
+            action="#"
             method="POST"
             onsubmit="handleWaitlistSubmit(event)"
           >
@@ -655,9 +658,9 @@
       <section>
         <h2 class="section-title">Who’s behind Growspent?</h2>
         <p class="section-subtitle">
-          I’m starting from a simple belief: if everyday people had tools that fit
-          the way they actually live and spend, wealth-building wouldn’t feel so
-          intimidating or out of reach.
+          The idea is simple: if everyday people had tools that fit the way they
+          actually live and spend, wealth-building wouldn’t feel so intimidating
+          or out of reach.
         </p>
 
         <div class="founder">
@@ -705,7 +708,7 @@
       const monthlyInvest = (monthlySpend * percent) / 100;
       const yearlyInvest = monthlyInvest * 12;
 
-      // Very rough future value estimate: FV = yearly * [((1+r)^n - 1) / r]
+      // Rough future value estimate: FV = yearly * [((1+r)^n - 1) / r]
       const r = 0.06; // 6% assumed
       const n = 10;
       const fvFactor = (Math.pow(1 + r, n) - 1) / r;
@@ -722,11 +725,10 @@
       e.preventDefault();
       const msg = document.getElementById("waitlist-message");
       msg.textContent =
-        "Thanks for your interest! In this prototype, the form isn’t wired up yet — but this is exactly where early access signups will land.";
+        "Thanks for your interest! In this prototype, the form is a preview. When Growspent goes live, this is where real early access sign-ups will land.";
     }
 
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
